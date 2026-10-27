@@ -23,13 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY =\
-    'django-insecure-ccow$tz_=9%dxu4(0%^(z%nx32#s@(zt9$ih@)5l54yny)wm-0'
+    'django-insecure-ccow$tz_=9\%dxu4(0\%^(z\%nx32#s@(zt9$ih@)5l54yny)wm-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['localhost', 'https://vaishnavik47-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS = ['https://vaishnavik47-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -61,7 +61,9 @@ ROOT_URLCONF = 'djangoproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend/static')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,13 +128,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
-MEDIA_URL = '/media/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_DIRS = []
-
